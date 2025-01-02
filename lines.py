@@ -38,12 +38,12 @@ for page_idx, page in enumerate(pages):
             rimes[tone_idx][rime_idx].replace('　', ''),
         ]
         for i, cell in enumerate(line):
-            if not cell:
-                continue
             cell_new = []
             if i < 3:
                 cell_new.append(''.join([e[0] for e in cell]))
             else:
+                if not cell:
+                    continue
                 cell_new.append(col_names[i])
                 cell_new.append(cell[0][0])
                 if len(cell) > 1:
@@ -63,7 +63,7 @@ with open('fujita-data.csv', 'w', encoding='utf-8') as f:
     for line in lines:
         f.write(','.join(line) + '\n')
 
-for filename, preffix in [
+for filename, prefix in [
     ('切韻 藤田拓海復元.csv', '本稿推定-'),
     ('切韻 李永富復元.csv', '李永富[1973]推定-'),
 ]:
@@ -73,7 +73,7 @@ for filename, preffix in [
         for line in lines:
             flag = False
             for cell in line:
-                if cell.startswith(preffix):
+                if cell.startswith(prefix):
                     flag = True
                     break
             if flag:
