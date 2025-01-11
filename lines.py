@@ -158,4 +158,4 @@ for filename, prefix in [
                     flag = True
                     break
             if flag:
-                f.write(','.join(line[:7] + cell.split('-')[1:]) + '\n')
+                f.write(','.join(line[:8] + cell.split('-')[1:]) + '\n')
