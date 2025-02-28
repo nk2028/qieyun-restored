@@ -16,7 +16,7 @@
 - [`fujita-data.csv`](fujita-data.csv): Complete data of the appendix *Qieyun* Table 切韻表
 - [`切韻 藤田拓海復元.csv`](切韻%20藤田拓海復元.csv): *Qieyun* 切韻 restored by Fujita Takumi 藤田拓海
 - [`切韻 李永富復元.csv`](切韻%20李永富復元.csv): *Qieyun* 切韻 restored by Li Yongfu 李永富
-- [`small-rime-diffs.csv`](small-rime-diffs.csv): Differences between the two restored versions
+- [`small-rime-diffs.csv`](small-rime-diffs.csv): Differences of the existence of small rimes between the two restored versions
 
 Phonological position descriptions 音韻地位描述 in [TshetUinh.js](https://github.com/nk2028/tshet-uinh-js) v0.15 format are also added.
 

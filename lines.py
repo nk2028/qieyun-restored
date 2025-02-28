@@ -44,6 +44,10 @@ nk2028_desc_patch = {
     '幫三B耕入': '幫三B庚入',  # 碧
     '並三B耕入': '並三B庚入',  # 欂
 }
+compatibility_patch = dict(zip(
+    '靈僧節練器兀都突貫海鶴隆梅視逸穀屮著練謁塚喝臭謹',
+    '靈僧節練器兀都突貫海鶴隆梅視逸穀屮著練謁塚喝臭謹',
+))
 
 
 def fujita_tuple_to_nk2028_desc(fujita_tuple):
@@ -130,12 +134,22 @@ for page_idx, page in enumerate(pages):
         line_new[2] = fujita_tuple_to_nk2028_desc((
             line_new[3], line_new[4], line_new[7],
         ))
+        for i, cell in enumerate(line_new):
+            for pair in compatibility_patch.items():
+                cell = cell.replace(*pair)
+            line_new[i] = cell
         lines.append(line_new)
     if len(page) < 59:
         print(tones[tone_idx], rimes[tone_idx][rime_idx], 'END')
         tone_idx += 1
         rime_idx = 0
         last_small_rime_id = '1'
+
+# import re
+# for line in lines:
+#     for cell in line:
+#         for match in re.findall(r'[\uF900-\uFAFF\U0002F800-\U0002FA1F]', cell):
+#             print(match, line)
 
 with open('fujita-data.csv', 'w', encoding='utf-8') as f:
     f.write(','.join(

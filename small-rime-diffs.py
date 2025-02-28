@@ -4,6 +4,7 @@ with open('fujita-data.csv', encoding='utf-8') as f:
 
 for i in range(len(lines) - 1):
     if lines[i][6] and lines[i + 1][6] and lines[i][6] == lines[i + 1][6] and lines[i][4] != '拯':
+        # if the small rime id is the same, the initial should also be
         assert lines[i][7] == lines[i + 1][7]
 
 prefixes = ['本稿推定', '李永富[1973]推定']
