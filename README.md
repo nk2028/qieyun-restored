@@ -17,8 +17,9 @@
 - [`切韻 藤田拓海復元.csv`](切韻%20藤田拓海復元.csv): *Qieyun* 切韻 restored by Fujita Takumi 藤田拓海
 - [`切韻 李永富復元.csv`](切韻%20李永富復元.csv): *Qieyun* 切韻 restored by Li Yongfu 李永富
 - [`small-rime-diffs.csv`](small-rime-diffs.csv): Differences of the existence of small rimes between the two restored versions
+- [`to_tshet_uinh_data/small_rimes.csv`](to_tshet_uinh_data/small_rimes.csv): Small rimes that appear in either version
 
-Phonological position descriptions 音韻地位描述 in [TshetUinh.js](https://github.com/nk2028/tshet-uinh-js) v0.15 format are also added.
+Phonological position descriptions 音韻地位描述 in [TshetUinh.js](https://github.com/nk2028/tshet-uinh-js) v0.15 format are also added to these files. Corresponding *Guangyun* 廣韻 small rime numbers and phonological position descriptions of *fanqie* 反切 spellers are also added to [`to_tshet_uinh_data/small_rimes.csv`](to_tshet_uinh_data/small_rimes.csv).
 
 ## Process
 
@@ -27,3 +28,6 @@ Phonological position descriptions 音韻地位描述 in [TshetUinh.js](https://
 3. `pages.py`: Rebuild the table on each page from `raw.pkl` to `pages.pkl`
 4. `lines.py`: Stringify all lines in `pages.pkl` to `fujita-data.csv` and extract restored *Qieyun* data to `切韻 藤田拓海復元.csv` and `切韻 李永富復元.csv`
 5. `small-rime-diffs.py`: Compare the two restored versions and save to `small-rime-diffs.csv`
+6. `to_tshet_uinh_data/small_rimes.py`: Combine small rimes in two versions, extract/add other fields, and generate `to_tshet_uinh_data/small_rimes.csv`
+
+Results of processes 2 to 6 have been deposited into this repo.
